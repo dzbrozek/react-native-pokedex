@@ -20,7 +20,7 @@
     "rootDir": "src",
     "baseUrl": "./src",
 
-    "noImplicitAny": true,
+    "noImplicitAny": false,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noImplicitReturns": true,

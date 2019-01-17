@@ -1,12 +1,22 @@
 import { shallow } from 'enzyme';
 import React from 'react';
 import App from '../App';
-import { Text } from 'react-native';
+import { AppLoading } from 'expo';
+import AppNavigator from '../../../navigation';
 
 describe('<App/>', () => {
-  it('should render component', () => {
+  it('should render loader', () => {
     const wrapper = shallow(<App />);
 
-    expect(wrapper.find(Text).prop('children')).toEqual('Open up App.js to start working on your app!');
+    expect(wrapper.find(AppLoading).exists()).toEqual(true);
+  });
+
+  it('should render navigator', () => {
+    const wrapper = shallow(<App />);
+    wrapper.setState({
+      isReady: true,
+    });
+
+    expect(wrapper.find(AppNavigator).exists()).toEqual(true);
   });
 });
