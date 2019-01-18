@@ -1,49 +1,19 @@
-import { createBottomTabNavigator, createStackNavigator } from 'react-navigation';
-import Pokedex from '../screens/Pokedex';
-import Favourite from '../screens/Favourite';
-import About from '../screens/About';
+import { createBottomTabNavigator } from 'react-navigation';
 import { theme } from '../constants';
-import React from 'react';
-import TabBarIcon from '../components/TabBarIcon';
-
-const AboutStack = createStackNavigator({
-  About,
-}, {
-  defaultNavigationOptions: {
-    headerTitleStyle: {
-      fontSize: 16,
-      color: theme.colors.white,
-      fontFamily: 'Roboto-Regular',
-      alignContent: 'center',
-    },
-    headerStyle: {
-      backgroundColor: theme.colors.red,
-    },
-  },
-});
-
-AboutStack.navigationOptions = {
-  tabBarLabel: 'About',
-  tabBarIcon: ({ focused }: { focused: boolean }) => (
-    <TabBarIcon
-      focused={focused}
-      size={26}
-      color={theme.colors.white}
-      name="md-information-circle"
-    />
-  ),
-};
+import PokedexStack from './Pokedex';
+import AboutStack from './About';
+import FavouriteStack from './Favourite';
 
 const Tabs = createBottomTabNavigator({
-  Pokedex,
-  Favourite,
+  PokedexStack,
+  FavouriteStack,
   AboutStack,
 }, {
-  initialRouteName: 'AboutStack',
+  initialRouteName: 'FavouriteStack',
   tabBarOptions: {
     activeTintColor: theme.colors.white,
     activeBackgroundColor: theme.colors.red,
-    inactiveTintColor: theme.colors.lightgrey,
+    inactiveTintColor: theme.colors.lightGrey,
     inactiveBackgroundColor: theme.colors.lightRed,
     showLabel: true,
     showIcon: true,

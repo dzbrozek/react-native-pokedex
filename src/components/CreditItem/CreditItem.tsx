@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, ToastAndroid } from 'react-native';
 import { ListItemProps } from '../../common/types';
-import { Ionicons } from '@expo/vector-icons';
+import { FontAwesome } from '@expo/vector-icons';
 import { theme } from '../../constants';
 import { Linking } from 'expo';
 
@@ -28,7 +28,7 @@ class CreditItem extends React.Component<Props, {}> {
     return (
       <TouchableOpacity style={styles.container} onPress={this.onPress}>
         <View style={styles.iconContainer}>
-          <Ionicons
+          <FontAwesome
             name={icon}
             size={26}
             color={theme.colors.red}
@@ -39,8 +39,8 @@ class CreditItem extends React.Component<Props, {}> {
           <Text style={styles.subtitle}>{subtitle}</Text>
         </View>
         <View style={styles.linkContainer}>
-          <Ionicons
-            name="md-arrow-forward"
+          <FontAwesome
+            name="arrow-right"
             size={26}
             color={theme.colors.red}
           />

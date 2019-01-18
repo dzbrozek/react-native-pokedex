@@ -1,5 +1,5 @@
 import React from 'react';
-import { Ionicons } from '@expo/vector-icons';
+import { FontAwesome } from '@expo/vector-icons';
 import { StyleProp, StyleSheet, TextStyle } from 'react-native';
 
 interface Props {
@@ -12,7 +12,7 @@ interface Props {
 
 const TabBarIcon: React.FunctionComponent<Props> = ({ focused, name, size, color, iconStyle }) => {
   return (
-    <Ionicons
+    <FontAwesome
       name={name}
       size={size}
       style={[styles.icon, focused ? styles.focused : null, iconStyle]}

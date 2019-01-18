@@ -1,5 +1,7 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View, FlatList, StyleSheet } from 'react-native';
+import PokemonItem from '../../components/PokemonItem';
+import EmptyMessage from '../../components/EmptyMessage';
 
 class Favourite extends React.Component {
   static navigationOptions = {
@@ -8,11 +10,34 @@ class Favourite extends React.Component {
 
   render() {
     return (
-      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-        <Text>Favourite</Text>
+      <View style={styles.container}>
+        <FlatList
+          contentContainerStyle={styles.contentContainerStyle}
+          horizontal={false}
+          data={[]}
+          keyExtractor={item => item.id}
+          ListEmptyComponent={() => {
+            return (
+              <EmptyMessage
+                iconProps={{ name: 'shopping-basket' }}
+                message="You didn't catch any pokemon yet"
+              />
+            );
+          }}
+          renderItem={({ item }) => <PokemonItem item={item} liked={true}/>}
+        />
       </View>
     );
   }
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
+  contentContainerStyle: {
+    flexGrow: 1,
+  },
+});
 
 export default Favourite;

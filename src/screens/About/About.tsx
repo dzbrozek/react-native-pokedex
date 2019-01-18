@@ -4,21 +4,7 @@ import Card from '../../components/Card';
 import { theme } from '../../constants';
 import CreditItem from '../../components/CreditItem';
 import { ListItemProps } from '../../common/types';
-
-const CREDITS: ListItemProps[] = [
-  {
-    title: 'API',
-    subtitle: 'GraphQL Pokémon',
-    icon: 'md-pulse',
-    link: 'https://github.com/lucasbento/graphql-pokemon',
-  },
-  {
-    title: 'Icons',
-    subtitle: 'Pokemon Go Vol. 2',
-    icon: 'md-information-circle',
-    link: 'https://www.iconfinder.com/iconsets/pokemon-go-vol-2',
-  },
-];
+import { CREDITS } from '../../constants/creadits';
 
 class About extends React.Component {
   static navigationOptions = {
@@ -69,7 +55,7 @@ const styles = StyleSheet.create({
   },
   itemSeparator: {
     borderBottomWidth: 1,
-    borderBottomColor: theme.colors.lightgrey,
+    borderBottomColor: theme.colors.lightGrey,
   },
 });
 

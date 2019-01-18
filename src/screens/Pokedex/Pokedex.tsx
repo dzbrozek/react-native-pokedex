@@ -1,5 +1,7 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View, FlatList } from 'react-native';
+import { POKEMONS } from '../../fixtures/pokemons';
+import PokemonItem from '../../components/PokemonItem';
 
 class Pokedex extends React.Component {
   static navigationOptions = {
@@ -8,8 +10,13 @@ class Pokedex extends React.Component {
 
   render() {
     return (
-      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-        <Text>Pokedex</Text>
+      <View>
+        <FlatList
+          horizontal={false}
+          data={POKEMONS}
+          keyExtractor={item => item.id}
+          renderItem={({ item }) => <PokemonItem item={item} liked={true}/>}
+        />
       </View>
     );
   }

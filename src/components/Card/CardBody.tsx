@@ -18,7 +18,7 @@ const styles = StyleSheet.create({
   container: {
     padding: 8,
     borderWidth: 1,
-    borderColor: theme.colors.lightgrey,
+    borderColor: theme.colors.lightGrey,
     borderTopColor: 'transparent',
     borderBottomLeftRadius: 6,
     borderBottomRightRadius: 6,
