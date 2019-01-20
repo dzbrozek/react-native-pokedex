@@ -9,7 +9,7 @@ const Tabs = createBottomTabNavigator({
   FavouriteStack,
   AboutStack,
 }, {
-  initialRouteName: 'FavouriteStack',
+  initialRouteName: 'PokedexStack',
   tabBarOptions: {
     activeTintColor: theme.colors.white,
     activeBackgroundColor: theme.colors.red,

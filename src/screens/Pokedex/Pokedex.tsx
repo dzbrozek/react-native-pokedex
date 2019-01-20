@@ -15,7 +15,7 @@ class Pokedex extends React.Component {
           horizontal={false}
           data={POKEMONS}
           keyExtractor={item => item.id}
-          renderItem={({ item }) => <PokemonItem item={item} liked={true}/>}
+          renderItem={({ item }) => <PokemonItem item={item}/>}
         />
       </View>
     );

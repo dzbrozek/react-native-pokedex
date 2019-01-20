@@ -1,21 +1,30 @@
 import React from 'react';
 import { View, FlatList, StyleSheet } from 'react-native';
-import PokemonItem from '../../components/PokemonItem';
+import FavoriteItem from '../../components/FavoriteItem';
 import EmptyMessage from '../../components/EmptyMessage';
+import { inject, observer } from 'mobx-react/native';
+import { FavoriteStore } from '../../stores/Favorite';
 
-class Favourite extends React.Component {
+interface Props {
+  favorite: FavoriteStore;
+}
+
+@inject('favorite')
+@observer
+class Favourite extends React.Component<Props> {
   static navigationOptions = {
     title: 'Favorite',
   };
 
   render() {
+    const { favorite: { pokemons } } = this.props;
     return (
       <View style={styles.container}>
         <FlatList
           contentContainerStyle={styles.contentContainerStyle}
           horizontal={false}
-          data={[]}
-          keyExtractor={item => item.id}
+          data={pokemons}
+          keyExtractor={item => item}
           ListEmptyComponent={() => {
             return (
               <EmptyMessage
@@ -24,7 +33,7 @@ class Favourite extends React.Component {
               />
             );
           }}
-          renderItem={({ item }) => <PokemonItem item={item} liked={true}/>}
+          renderItem={({ item }) => <FavoriteItem item={item}/>}
         />
       </View>
     );

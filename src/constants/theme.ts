@@ -2,6 +2,8 @@ const layout = {
   paddingMedium: 16,
   paddingSmall: 8,
   paddingExtraSmall: 4,
+
+  hitSlop: { top: 12, left: 12, right: 12, bottom: 12 },
 };
 
 const colors = {

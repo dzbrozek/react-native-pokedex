@@ -3,6 +3,8 @@ import { StyleSheet, View } from 'react-native';
 import { AppLoading, Font } from 'expo';
 import AppNavigator from '../../navigation';
 import { theme } from '../../constants';
+import { Provider as MobxProvider } from 'mobx-react/native';
+import stores from 'stores';
 
 export default class App extends React.Component {
   state = {
@@ -21,15 +23,15 @@ export default class App extends React.Component {
         'Roboto-Regular': require('../../assets/fonts/Roboto-Regular.ttf'),
       }),
     ]);
-  }
+  };
 
   onError = (error: Error)  => {
     console.warn(error);
-  }
+  };
 
   onFinish = () => {
     this.setState({ isReady: true });
-  }
+  };
 
   render() {
     const { isReady } = this.state;
@@ -46,7 +48,9 @@ export default class App extends React.Component {
 
     return (
       <View style={styles.container}>
-        <AppNavigator />
+        <MobxProvider {...stores}>
+          <AppNavigator />
+        </MobxProvider>
       </View>
     );
   }

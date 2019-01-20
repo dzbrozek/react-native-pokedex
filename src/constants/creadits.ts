@@ -8,7 +8,7 @@ export const CREDITS: ListItemProps[] = [
     link: 'https://github.com/lucasbento/graphql-pokemon',
   },
   {
-    title: 'App icon',
+    title: 'Icons',
     subtitle: 'Pokemon Go Vol. 2',
     icon: 'picture-o',
     link: 'https://www.iconfinder.com/iconsets/pokemon-go-vol-2',

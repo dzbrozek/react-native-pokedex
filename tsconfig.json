@@ -32,6 +32,7 @@
     "noFallthroughCasesInSwitch": true,
     "strictNullChecks": true,
     "allowSyntheticDefaultImports": true,
+    "experimentalDecorators": true,
     "lib": [ "es6" ],
     "paths": {
       "*": ["*", "*.ios", "*.android"]
