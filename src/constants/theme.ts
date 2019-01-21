@@ -1,8 +1,9 @@
 const layout = {
-  paddingMedium: 16,
-  paddingSmall: 8,
-  paddingExtraSmall: 4,
-
+  padding: {
+    md: 16,
+    sm: 8,
+    xs: 4,
+  },
   hitSlop: { top: 12, left: 12, right: 12, bottom: 12 },
 };
 

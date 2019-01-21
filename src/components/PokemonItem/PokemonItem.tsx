@@ -51,6 +51,7 @@ class PokemonItem extends React.Component<Props> {
               onPress={this.toggleFavorite}
               hitSlop={theme.layout.hitSlop}
               background={TouchableNativeFeedback.Ripple(theme.colors.red, true)}
+              testId="toggle-favorite"
             >
               <FontAwesome
                 name={favoriteIcon}
@@ -67,12 +68,12 @@ class PokemonItem extends React.Component<Props> {
 
 const styles = StyleSheet.create({
   container: {
-    padding: theme.layout.paddingSmall,
+    padding: theme.layout.padding.sm,
     flexDirection: 'row',
   },
   imageWrapper: {
-    marginRight: theme.layout.paddingSmall,
-    padding: theme.layout.paddingExtraSmall,
+    marginRight: theme.layout.padding.sm,
+    padding: theme.layout.padding.xs,
   },
   infoWrapper: {
     flexGrow: 1,

@@ -41,7 +41,7 @@ class About extends React.Component {
 
 const styles = StyleSheet.create({
   container: {
-    padding: theme.layout.paddingMedium,
+    padding: theme.layout.padding.md,
   },
   card: {
     marginBottom: 16,

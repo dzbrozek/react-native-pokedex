@@ -14,10 +14,10 @@ const PokemonType: React.FunctionComponent<Props> = ({ type, style }) => {
 
 const styles = StyleSheet.create({
   type: {
-    paddingVertical: theme.layout.paddingExtraSmall,
-    paddingHorizontal: theme.layout.paddingSmall,
+    paddingVertical: theme.layout.padding.xs,
+    paddingHorizontal: theme.layout.padding.sm,
     borderRadius: theme.shape.borderRadius,
-    marginRight: theme.layout.paddingSmall,
+    marginRight: theme.layout.padding.sm,
     fontFamily: theme.fonts.regular,
     fontSize: theme.fonts.fontSizeSmall,
     color: theme.colors.white,

@@ -64,8 +64,8 @@ export const POKEMONS = [{
     number: '008',
     name: 'Wartortle',
     types: [
-    'Water',
-  ],
+      'Water',
+    ],
     image: 'https://img.pokemondb.net/artwork/wartortle.jpg',
   },
   {
@@ -73,8 +73,8 @@ export const POKEMONS = [{
     number: '009',
     name: 'Blastoise',
     types: [
-    'Water',
-  ],
+      'Water',
+    ],
     image: 'https://img.pokemondb.net/artwork/blastoise.jpg',
   },
   {
@@ -82,8 +82,8 @@ export const POKEMONS = [{
     number: '010',
     name: 'Caterpie',
     types: [
-    'Bug',
-  ],
+      'Bug',
+    ],
     image: 'https://img.pokemondb.net/artwork/caterpie.jpg',
   },
   {
@@ -91,19 +91,19 @@ export const POKEMONS = [{
     number: '011',
     name: 'Metapod',
     types: [
-    'Bug',
-  ],
+      'Bug',
+    ],
     image: 'https://img.pokemondb.net/artwork/metapod.jpg',
   }, {
-  id: 'UG9rZW1vbjowMTI=',
-  number: '012',
-  name: 'Butterfree',
-  types: [
+    id: 'UG9rZW1vbjowMTI=',
+    number: '012',
+    name: 'Butterfree',
+    types: [
     'Bug',
     'Flying',
   ],
-  image: 'https://img.pokemondb.net/artwork/butterfree.jpg',
-}, {
+    image: 'https://img.pokemondb.net/artwork/butterfree.jpg',
+  }, {
   id: 'UG9rZW1vbjowMTM=',
   number: '013',
   name: 'Weedle',
@@ -127,27 +127,27 @@ export const POKEMONS = [{
     number: '015',
     name: 'Beedrill',
     types: [
-    'Bug',
-    'Poison',
-  ],
+      'Bug',
+      'Poison',
+    ],
     image: 'https://img.pokemondb.net/artwork/beedrill.jpg',
   }, {
-  id: 'UG9rZW1vbjoxNDk=',
-  number: '149',
-  name: 'Dragonite',
-  types: [
+    id: 'UG9rZW1vbjoxNDk=',
+    number: '149',
+    name: 'Dragonite',
+    types: [
     'Dragon',
     'Flying',
   ],
-  image: 'https://img.pokemondb.net/artwork/dragonite.jpg',
-},
+    image: 'https://img.pokemondb.net/artwork/dragonite.jpg',
+  },
   {
     id: 'UG9rZW1vbjoxNTA=',
     number: '150',
     name: 'Mewtwo',
     types: [
-    'Psychic',
-  ],
+      'Psychic',
+    ],
     image: 'https://img.pokemondb.net/artwork/mewtwo.jpg',
   },
   {
@@ -155,19 +155,19 @@ export const POKEMONS = [{
     number: '151',
     name: 'Mew',
     types: [
-    'Psychic',
-  ],
+      'Psychic',
+    ],
     image: 'https://img.pokemondb.net/artwork/mew.jpg',
   }, {
-  id: 'UG9rZW1vbjowNjI=',
-  number: '062',
-  name: 'Poliwrath',
-  types: [
+    id: 'UG9rZW1vbjowNjI=',
+    number: '062',
+    name: 'Poliwrath',
+    types: [
     'Water',
     'Fighting',
   ],
-  image: 'https://img.pokemondb.net/artwork/poliwrath.jpg',
-}];
+    image: 'https://img.pokemondb.net/artwork/poliwrath.jpg',
+  }];
 
 export const POKEMON = {
   'UG9rZW1vbjowMDE=': {

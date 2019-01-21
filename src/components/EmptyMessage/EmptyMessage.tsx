@@ -33,7 +33,7 @@ const styles = StyleSheet.create({
     fontFamily: theme.fonts.bold,
     fontSize: theme.fonts.fontSizeBig,
     color: theme.colors.black,
-    padding: theme.layout.paddingSmall,
+    padding: theme.layout.padding.sm,
   },
   icon: {
     alignSelf: 'center',

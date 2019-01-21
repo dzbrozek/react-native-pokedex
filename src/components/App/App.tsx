@@ -23,15 +23,15 @@ export default class App extends React.Component {
         'Roboto-Regular': require('../../assets/fonts/Roboto-Regular.ttf'),
       }),
     ]);
-  };
+  }
 
   onError = (error: Error)  => {
     console.warn(error);
-  };
+  }
 
   onFinish = () => {
     this.setState({ isReady: true });
-  };
+  }
 
   render() {
     const { isReady } = this.state;

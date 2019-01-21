@@ -1,7 +1,7 @@
 import React from 'react';
 import { POKEMON } from '../../fixtures/pokemons';
 import PokemonItem from '../PokemonItem';
-import PokemonItemLoader from '../PokemonItemLoader';
+import FavoriteItemLoader from '../FavoriteItemLoader';
 
 const FavoriteItem = ({ item }) => {
   const pokemonData = POKEMON[item];
@@ -10,7 +10,7 @@ const FavoriteItem = ({ item }) => {
     return <PokemonItem item={pokemonData}/>;
   }
 
-  return <PokemonItemLoader/>;
+  return <FavoriteItemLoader/>;
 };
 
 export default FavoriteItem;

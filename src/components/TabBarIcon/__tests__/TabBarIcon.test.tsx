@@ -8,7 +8,7 @@ describe('<TabBarIcon/>', () => {
     const props = {
       focused: true,
       size: 12,
-      name: 'md-information-circle',
+      name: 'plus-circle',
       color: 'red',
     };
     const wrapper = shallow(<TabBarIcon {...props}/>);

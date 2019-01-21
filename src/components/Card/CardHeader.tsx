@@ -18,7 +18,7 @@ const CardHeader: React.FunctionComponent<Props> = ({ containerStyle, textStyle,
 
 const styles = StyleSheet.create({
   container: {
-    padding: theme.layout.paddingSmall,
+    padding: theme.layout.padding.sm,
     backgroundColor: theme.colors.red,
     borderTopLeftRadius: theme.shape.borderRadius,
     borderTopRightRadius: theme.shape.borderRadius,
