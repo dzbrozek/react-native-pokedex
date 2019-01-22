@@ -1,16 +1,20 @@
 import React from 'react';
-import { POKEMON } from '../../fixtures/pokemons';
 import PokemonItem from '../PokemonItem';
 import FavoriteItemLoader from '../FavoriteItemLoader';
+import { Query } from 'react-apollo';
+import { GET_POKEMON } from './gql';
 
-const FavoriteItem = ({ item }) => {
-  const pokemonData = POKEMON[item];
-
-  if (pokemonData) {
-    return <PokemonItem item={pokemonData}/>;
-  }
-
-  return <FavoriteItemLoader/>;
+const FavoriteItem = ({ item: id }) => {
+  return (
+    <Query query={GET_POKEMON} variables={{ id }}>
+      {({ loading, error, data }) => {
+        if (loading || error) {
+          return <FavoriteItemLoader/>;
+        }
+        return <PokemonItem item={data.pokemon}/>;
+      }}
+    </Query>
+  );
 };
 
 export default FavoriteItem;

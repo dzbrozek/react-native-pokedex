@@ -24,6 +24,30 @@ export const POKEMON_TYPE_STYLES = Object.freeze({
     backgroundColor: '#7B3D2A',
   },
   Psychic: {
-    backgroundColor: '#B04F72',
+    backgroundColor: '#C9B251',
+  },
+  Electric: {
+    backgroundColor: '#F1BD1C',
+  },
+  Ice: {
+    backgroundColor: '#20C3D0',
+  },
+  Normal: {
+    backgroundColor: '#f97928',
+  },
+  Rock: {
+    backgroundColor: '#57565C',
+  },
+  Ground: {
+    backgroundColor: '#4C2B1A',
+  },
+  Ghost: {
+    backgroundColor: '#5A5060',
+  },
+  Steel: {
+    backgroundColor: '#C2C4D3',
+  },
+  Fairy: {
+    backgroundColor: '#fa92ff',
   },
 });

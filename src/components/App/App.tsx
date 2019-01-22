@@ -5,6 +5,8 @@ import AppNavigator from '../../navigation';
 import { theme } from '../../constants';
 import { Provider as MobxProvider } from 'mobx-react/native';
 import stores from 'stores';
+import { ApolloProvider } from 'react-apollo';
+import client from 'config/api';
 
 export default class App extends React.Component {
   state = {
@@ -48,9 +50,11 @@ export default class App extends React.Component {
 
     return (
       <View style={styles.container}>
-        <MobxProvider {...stores}>
-          <AppNavigator />
-        </MobxProvider>
+        <ApolloProvider client={client}>
+          <MobxProvider {...stores}>
+            <AppNavigator />
+          </MobxProvider>
+        </ApolloProvider>
       </View>
     );
   }

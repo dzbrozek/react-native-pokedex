@@ -10,7 +10,7 @@ import { FavoriteStore } from '../../stores/Favorite';
 
 interface Props {
   item: PokemonProps;
-  favorite: FavoriteStore;
+  favorite?: FavoriteStore;
 }
 
 @inject('favorite')
@@ -18,13 +18,13 @@ interface Props {
 class PokemonItem extends React.Component<Props> {
   toggleFavorite = async () => {
     const { item: { id: pokemonId }, favorite } = this.props;
-    const added = favorite.pokemons.indexOf(pokemonId) > -1;
+    const added = favorite!.pokemons.indexOf(pokemonId) > -1;
 
     try {
       if (added) {
-        await favorite.removePokemon(pokemonId);
+        await favorite!.removePokemon(pokemonId);
       } else {
-        await favorite.addPokemon(pokemonId);
+        await favorite!.addPokemon(pokemonId);
       }
     } catch (e) {
       ToastAndroid.show('We can\'t do that right now', ToastAndroid.SHORT);
@@ -33,7 +33,7 @@ class PokemonItem extends React.Component<Props> {
 
   render() {
     const { item, favorite } = this.props;
-    const favoriteIcon = favorite.pokemons.indexOf(item.id) > -1 ? 'heart' : 'heart-o';
+    const favoriteIcon = favorite!.pokemons.indexOf(item.id) > -1 ? 'heart' : 'heart-o';
     return (
       <Touchable>
         <View style={styles.container}>

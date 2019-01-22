@@ -11,7 +11,7 @@ interface Props {
   textStyle?: StyleProp<TextStyle>;
 }
 
-const EmptyMessage: React.FunctionComponent<Props> = ({ message, iconProps, iconStyle, textStyle }) => {
+const ScreenMessage: React.FunctionComponent<Props> = ({ message, iconProps, iconStyle, textStyle }) => {
   return (
     <View style={styles.container}>
       <FontAwesome
@@ -42,4 +42,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default EmptyMessage;
+export default ScreenMessage;

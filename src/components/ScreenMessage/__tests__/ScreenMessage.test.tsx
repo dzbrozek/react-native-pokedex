@@ -1,10 +1,10 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import EmptyMessage from '../EmptyMessage';
+import ScreenMessage from '../ScreenMessage';
 import { FontAwesome } from '@expo/vector-icons';
 import { Text } from 'react-native';
 
-describe('<EmptyMessage/>', () => {
+describe('<ScreenMessage/>', () => {
   it('should render component', () => {
     const props = {
       iconProps: {
@@ -12,7 +12,7 @@ describe('<EmptyMessage/>', () => {
       },
       message: 'Test message',
     };
-    const wrapper = shallow(<EmptyMessage {...props}/>);
+    const wrapper = shallow(<ScreenMessage {...props}/>);
 
     expect(wrapper.find(FontAwesome).props()).toMatchObject(props.iconProps);
 

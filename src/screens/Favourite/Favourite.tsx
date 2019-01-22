@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, FlatList, StyleSheet } from 'react-native';
 import FavoriteItem from '../../components/FavoriteItem';
-import EmptyMessage from '../../components/EmptyMessage';
+import ScreenMessage from '../../components/ScreenMessage';
 import { inject, observer } from 'mobx-react/native';
 import { FavoriteStore } from '../../stores/Favorite';
 
@@ -27,7 +27,7 @@ class Favourite extends React.Component<Props> {
           keyExtractor={item => item}
           ListEmptyComponent={() => {
             return (
-              <EmptyMessage
+              <ScreenMessage
                 iconProps={{ name: 'shopping-basket' }}
                 message="You didn't catch any pokemon yet"
               />

@@ -1,20 +1,12 @@
 import { theme } from '../../constants';
 import { StyleSheet, View } from 'react-native';
-import { Image } from 'react-native-animatable';
 import React from 'react';
+import Loader from '../Loader';
 
 const FavoriteItemLoader = () => {
   return (
     <View style={styles.container}>
-      <View style={styles.imageWrapper}>
-        <Image
-          animation="tada"
-          iterationCount="infinite"
-          duration={2000}
-          style={styles.image}
-          source={require('../../assets/images/pokeball.png')}
-        />
-      </View>
+      <Loader containerStyle={styles.imageWrapper} imageStyle={styles.image}/>
     </View>
   );
 };
@@ -31,6 +23,7 @@ const styles = StyleSheet.create({
     height: 67,
     justifyContent: 'center',
     alignItems: 'center',
+    flex: 0,
   },
   image: {
     width: 32,
