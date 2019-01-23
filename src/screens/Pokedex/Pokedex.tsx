@@ -9,29 +9,26 @@ import ScreenMessage from '../../components/ScreenMessage';
 import { PokemonProps } from '../../types/pokemon';
 
 const PAGE_SIZE = 15;
-const NUM_POKEMONS = 151;
 
 interface State {
   numResults: number;
+  hasMore: boolean;
 }
 
-class Pokedex extends React.Component<NavigationScreenProps, State> {
+class Pokedex extends React.PureComponent<NavigationScreenProps, State> {
   static navigationOptions = {
-    title: 'Pokédex',
+    title: 'Pokedex',
   };
 
   state = {
-    numResults: 50,
-    results: [],
     hasMore: true,
-    isLoading: true,
-    hasError: false,
+    numResults: PAGE_SIZE,
   };
 
   onEndReached = () => {
-    const { numResults } = this.state;
+    const { hasMore } = this.state;
 
-    if (numResults >= NUM_POKEMONS) { return; }
+    if (!hasMore) { return; }
 
     this.setState(prevState => ({
       numResults: prevState.numResults + PAGE_SIZE,
@@ -46,10 +43,17 @@ class Pokedex extends React.Component<NavigationScreenProps, State> {
         <Query
           query={GET_POKEMONS}
           variables={{ first: numResults }}
+          onCompleted={(data) => {
+            if (data.pokemons.length < numResults) {
+              this.setState({
+                hasMore: false,
+              });
+            }
+          }}
         >
           {({ loading, error, data }) => {
             if (error) {
-              return <ScreenMessage message="Unable to load pokemons" iconProps={{ name: 'shopping-basket' }}/>;
+              return <ScreenMessage message="Your Pokedex is broken" iconProps={{ name: 'th' }}/>;
             }
             return (
               <FlatList

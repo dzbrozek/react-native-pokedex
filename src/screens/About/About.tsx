@@ -5,8 +5,9 @@ import { theme } from '../../constants';
 import CreditItem from '../../components/CreditItem';
 import { ListItemProps } from '../../common/types';
 import { CREDITS } from '../../constants/creadits';
+import { NavigationScreenProps } from 'react-navigation';
 
-class About extends React.Component {
+class About extends React.Component<NavigationScreenProps> {
   static navigationOptions = {
     title: 'About',
   };

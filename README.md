@@ -15,3 +15,4 @@ npm start
 ## App
 
 ![Pokedex](screenshots/pokedex.jpg)
+![Favorite](screenshots/favorite.jpg)

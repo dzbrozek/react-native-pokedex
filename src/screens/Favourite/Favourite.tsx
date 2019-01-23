@@ -4,8 +4,9 @@ import FavoriteItem from '../../components/FavoriteItem';
 import ScreenMessage from '../../components/ScreenMessage';
 import { inject, observer } from 'mobx-react/native';
 import { FavoriteStore } from '../../stores/Favorite';
+import { NavigationScreenProps } from 'react-navigation';
 
-interface Props {
+interface Props extends NavigationScreenProps {
   favorite: FavoriteStore;
 }
 
