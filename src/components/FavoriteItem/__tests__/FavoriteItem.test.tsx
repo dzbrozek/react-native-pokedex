@@ -30,7 +30,7 @@ describe('<FavoriteItem/>', () => {
     expect(wrapper.find(FavoriteItemLoader).exists()).toEqual(true);
   });
 
-  it('should render error state', () => {
+  it('should render error state', async () => {
     const mock = {
       ...commonMock,
       error: new Error(),
@@ -40,6 +40,8 @@ describe('<FavoriteItem/>', () => {
         <FavoriteItem item={item}/>
       </MockedProvider>,
     );
+
+    await wait(2);
 
     expect(wrapper.find(FavoriteItemLoader).exists()).toEqual(true);
   });
