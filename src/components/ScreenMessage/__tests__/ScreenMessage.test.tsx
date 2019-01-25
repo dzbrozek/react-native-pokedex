@@ -1,8 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import ScreenMessage from '../ScreenMessage';
-import { FontAwesome } from '@expo/vector-icons';
-import { Text } from 'react-native';
+import { Icon, Message } from '../styles';
 
 describe('<ScreenMessage/>', () => {
   it('should render component', () => {
@@ -14,8 +13,8 @@ describe('<ScreenMessage/>', () => {
     };
     const wrapper = shallow(<ScreenMessage {...props}/>);
 
-    expect(wrapper.find(FontAwesome).props()).toMatchObject(props.iconProps);
+    expect(wrapper.find(Icon).props()).toMatchObject(props.iconProps);
 
-    expect(wrapper.find(Text).prop('children')).toEqual(props.message);
+    expect(wrapper.find(Message).prop('children')).toEqual(props.message);
   });
 });

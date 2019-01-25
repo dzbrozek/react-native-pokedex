@@ -14,7 +14,7 @@ interface ChildrenElements {
 
 const Card: React.FunctionComponent<Props> & ChildrenElements = ({ children, style }) => {
   return (
-    <View style={[style]}>
+    <View style={style}>
       {children}
     </View>
   );

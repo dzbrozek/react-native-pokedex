@@ -2,8 +2,8 @@ import React from 'react';
 import { pokemonFactory } from '../../../tests/factories';
 import { shallow } from 'enzyme';
 import PokemonItem from '../PokemonItem';
-import { Image, Text } from 'react-native';
 import { FontAwesome } from '@expo/vector-icons';
+import { Image, Name } from '../styles';
 
 const pokemon = pokemonFactory.build();
 const removePokemonMock = jest.fn();
@@ -20,7 +20,7 @@ describe('<PokemonItem/>', () => {
       uri: pokemon.image,
     });
 
-    expect(wrapper.find(Text).props()).toMatchObject({
+    expect(wrapper.find(Name).props()).toMatchObject({
       numberOfLines: 1,
       children: `#${pokemon.number} ${pokemon.name}`,
     });

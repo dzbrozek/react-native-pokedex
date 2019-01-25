@@ -4,7 +4,12 @@ const layout = {
     sm: 8,
     xs: 4,
   },
-  hitSlop: { top: 12, left: 12, right: 12, bottom: 12 },
+  hitSlop: {
+    top: 12,
+    left: 12,
+    right: 12,
+    bottom: 12,
+  },
 };
 
 const colors = {
@@ -13,6 +18,7 @@ const colors = {
   black: '#222224',
   white: '#f0f0f0',
   lightGrey: 'lightgrey',
+  blackGrey: '#505052',
   tabIconSelected: '#2f95dc',
   tabIconDefault: '#ccc',
 };

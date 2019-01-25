@@ -1,5 +1,5 @@
 import React from 'react';
-import { Image, StyleSheet, View, Text, ToastAndroid, TouchableNativeFeedback } from 'react-native';
+import { ToastAndroid, TouchableNativeFeedback } from 'react-native';
 import { PokemonProps } from '../../types/pokemon';
 import { theme } from '../../constants';
 import { FontAwesome } from '@expo/vector-icons';
@@ -7,6 +7,7 @@ import Touchable from 'react-native-platform-touchable';
 import PokemonType from '../PokemonType';
 import { inject, observer } from 'mobx-react/native';
 import { FavoriteStore } from '../../stores/Favorite';
+import { Container, DetailsContainer, Image, ImageContainer, LikeContainer, Name, Types } from './styles';
 
 interface Props {
   item: PokemonProps;
@@ -36,17 +37,17 @@ class PokemonItem extends React.Component<Props> {
     const favoriteIcon = favorite!.pokemons.indexOf(item.id) > -1 ? 'heart' : 'heart-o';
     return (
       <Touchable>
-        <View style={styles.container}>
-          <View style={styles.imageWrapper}>
-            <Image source={{ uri: item.image }} style={styles.image}/>
-          </View>
-          <View style={styles.infoWrapper}>
-            <Text style={styles.name} numberOfLines={1}>{`#${item.number} ${item.name}`}</Text>
-            <View style={styles.types}>
+        <Container>
+          <ImageContainer>
+            <Image source={{ uri: item.image }} resizeMode="cover"/>
+          </ImageContainer>
+          <DetailsContainer>
+            <Name numberOfLines={1}>{`#${item.number} ${item.name}`}</Name>
+            <Types>
               {item.types.map((type: string) => <PokemonType key={type} type={type}/>)}
-            </View>
-          </View>
-          <View style={styles.likeWrapper}>
+            </Types>
+          </DetailsContainer>
+          <LikeContainer>
             <Touchable
               onPress={this.toggleFavorite}
               hitSlop={theme.layout.hitSlop}
@@ -59,45 +60,11 @@ class PokemonItem extends React.Component<Props> {
                 color={theme.colors.red}
               />
             </Touchable>
-          </View>
-        </View>
+          </LikeContainer>
+        </Container>
       </Touchable>
     );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    padding: theme.layout.padding.sm,
-    flexDirection: 'row',
-  },
-  imageWrapper: {
-    marginRight: theme.layout.padding.sm,
-    padding: theme.layout.padding.xs,
-  },
-  infoWrapper: {
-    flexGrow: 1,
-    justifyContent: 'center',
-  },
-  likeWrapper: {
-    alignItems: 'center',
-    justifyContent: 'center',
-    width: 40,
-    flexShrink: 0,
-  },
-  image: {
-    width: 67,
-    height: 67,
-    resizeMode: 'cover',
-  },
-  name: {
-    fontFamily: theme.fonts.bold,
-    fontSize: theme.fonts.fontSizeBig,
-    color: theme.colors.black,
-  },
-  types: {
-    flexDirection: 'row',
-  },
-});
 
 export default PokemonItem;

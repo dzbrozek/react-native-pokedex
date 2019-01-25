@@ -9,7 +9,13 @@ import wait from 'waait';
 import PokemonItem from '../../PokemonItem';
 import { Provider as MobxProvider } from 'mobx-react/native';
 
+jest.mock('../../FavoriteItemLoader/styles');
+jest.mock('../../PokemonItem/styles');
+
 const item = '12345';
+const favorite: any = {
+  pokemons: [],
+};
 const commonMock = {
   request: {
     query: GET_POKEMON,
@@ -20,12 +26,18 @@ const commonMock = {
 };
 
 describe('<FavoriteItem/>', () => {
-  it('should render loading state', () => {
-    const wrapper = mount(
-      <MockedProvider mocks={[]} addTypename={false}>
-        <FavoriteItem item={item}/>
+  const prepareWrapper = (mocks) => {
+    return mount(
+      <MockedProvider mocks={mocks} addTypename={false}>
+        <MobxProvider favorite={favorite}>
+          <FavoriteItem item={item}/>
+        </MobxProvider>
       </MockedProvider>,
     );
+  };
+
+  it('should render loading state', () => {
+    const wrapper = prepareWrapper([]);
 
     expect(wrapper.find(FavoriteItemLoader).exists()).toEqual(true);
   });
@@ -35,11 +47,7 @@ describe('<FavoriteItem/>', () => {
       ...commonMock,
       error: new Error(),
     };
-    const wrapper = mount(
-      <MockedProvider mocks={[mock]} addTypename={false}>
-        <FavoriteItem item={item}/>
-      </MockedProvider>,
-    );
+    const wrapper = prepareWrapper([mock]);
 
     await wait(2);
 
@@ -54,16 +62,7 @@ describe('<FavoriteItem/>', () => {
         data: { pokemon },
       },
     };
-    const favorite: any = {
-      pokemons: [],
-    };
-    const wrapper = mount(
-      <MockedProvider mocks={[mock]} addTypename={false}>
-        <MobxProvider favorite={favorite}>
-          <FavoriteItem item={item}/>
-        </MobxProvider>
-      </MockedProvider>,
-    );
+    const wrapper = prepareWrapper([mock]);
 
     await wait(0);
 

@@ -1,13 +1,13 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { Image } from 'react-native-animatable';
-import FavoriteItemLoader from '../Loader';
+import Loader from '../Loader';
+import { PokeballImage } from '../styles';
 
-describe('<FavoriteItemLoader/>', () => {
+describe('<Loader/>', () => {
   it('should render component', () => {
-    const wrapper = shallow(<FavoriteItemLoader/>);
+    const wrapper = shallow(<Loader/>);
 
-    expect(wrapper.find(Image).props()).toMatchObject({
+    expect(wrapper.find(PokeballImage).props()).toMatchObject({
       animation: 'tada',
       iterationCount: 'infinite',
       duration: 2000,

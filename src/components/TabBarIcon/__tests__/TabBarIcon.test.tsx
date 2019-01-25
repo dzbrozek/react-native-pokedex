@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import TabBarIcon from '../TabBarIcon';
-import { FontAwesome } from '@expo/vector-icons';
+import { Icon } from '../styles';
 
 describe('<TabBarIcon/>', () => {
   it('should render component', () => {
@@ -13,7 +13,7 @@ describe('<TabBarIcon/>', () => {
     };
     const wrapper = shallow(<TabBarIcon {...props}/>);
 
-    expect(wrapper.find(FontAwesome).props()).toMatchObject({
+    expect(wrapper.find(Icon).props()).toMatchObject({
       size: props.size,
       name: props.name,
       color: props.color,

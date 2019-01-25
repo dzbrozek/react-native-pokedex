@@ -1,10 +1,11 @@
 import React from 'react';
-import { View, FlatList, StyleSheet } from 'react-native';
+import { FlatList } from 'react-native';
 import FavoriteItem from '../../components/FavoriteItem';
 import ScreenMessage from '../../components/ScreenMessage';
 import { inject, observer } from 'mobx-react/native';
 import { FavoriteStore } from '../../stores/Favorite';
 import { NavigationScreenProps } from 'react-navigation';
+import { Container, styles } from './styles';
 
 interface Props extends NavigationScreenProps {
   favorite: FavoriteStore;
@@ -20,9 +21,9 @@ class Favourite extends React.Component<Props> {
   render() {
     const { favorite: { pokemons } } = this.props;
     return (
-      <View style={styles.container}>
+      <Container>
         <FlatList
-          contentContainerStyle={styles.contentContainerStyle}
+          contentContainerStyle={styles.contentContainer}
           horizontal={false}
           data={pokemons}
           keyExtractor={item => item}
@@ -30,24 +31,15 @@ class Favourite extends React.Component<Props> {
             return (
               <ScreenMessage
                 iconProps={{ name: 'shopping-basket' }}
-                message="You didn't catch any pokemon yet"
+                message="You didn't like any pokemon yet"
               />
             );
           }}
           renderItem={({ item }) => <FavoriteItem item={item}/>}
         />
-      </View>
+      </Container>
     );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-  contentContainerStyle: {
-    flexGrow: 1,
-  },
-});
 
 export default Favourite;

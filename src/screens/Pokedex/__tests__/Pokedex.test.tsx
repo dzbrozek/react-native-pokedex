@@ -8,6 +8,8 @@ import Pokedex from '../Pokedex';
 import { FlatList } from 'react-native';
 import ScreenMessage from '../../../components/ScreenMessage';
 
+jest.mock('../../../components/ScreenMessage/styles');
+
 const first = 15;
 const pokemons = pokemonFactory.buildList(3);
 const commonMock = {

@@ -1,6 +1,6 @@
-import { ImageStyle, StyleProp, StyleSheet, View, ViewStyle } from 'react-native';
-import { Image } from 'react-native-animatable';
+import { ImageStyle, StyleProp, ViewStyle } from 'react-native';
 import React from 'react';
+import { Container, PokeballImage } from './styles';
 
 interface Interface {
   containerStyle?: StyleProp<ViewStyle>;
@@ -9,28 +9,16 @@ interface Interface {
 
 const Loader: React.FunctionComponent<Interface> = ({ imageStyle, containerStyle }) => {
   return (
-    <View style={[styles.container, containerStyle]}>
-      <Image
+    <Container style={containerStyle}>
+      <PokeballImage
         animation="tada"
         iterationCount="infinite"
         duration={2000}
-        style={[styles.image, imageStyle]}
+        style={imageStyle}
         source={require('../../assets/images/pokeball.png')}
       />
-    </View>
+    </Container>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  image: {
-    width: 48,
-    height: 48,
-  },
-});
 
 export default Loader;

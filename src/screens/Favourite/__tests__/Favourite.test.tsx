@@ -25,7 +25,7 @@ describe('<Favourite/>', () => {
 
     expect(component.props()).toEqual({
       iconProps: { name: 'shopping-basket' },
-      message: 'You didn\'t catch any pokemon yet',
+      message: 'You didn\'t like any pokemon yet',
     });
     expect(component.name()).toEqual('ScreenMessage');
   });

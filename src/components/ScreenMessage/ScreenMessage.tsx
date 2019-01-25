@@ -1,8 +1,7 @@
-import { FontAwesome } from '@expo/vector-icons';
 import React from 'react';
-import { StyleSheet, View, Text, StyleProp, ViewStyle, TextStyle } from 'react-native';
-import { theme } from '../../constants';
+import { StyleProp, ViewStyle, TextStyle } from 'react-native';
 import { IconProps } from 'react-native-vector-icons/Icon';
+import { Message, Container, Icon } from './styles';
 
 interface Props {
   message: string;
@@ -13,33 +12,14 @@ interface Props {
 
 const ScreenMessage: React.FunctionComponent<Props> = ({ message, iconProps, iconStyle, textStyle }) => {
   return (
-    <View style={styles.container}>
-      <FontAwesome
+    <Container>
+      <Icon
         {...iconProps}
-        style={[styles.icon, iconStyle]}
+        style={iconStyle}
       />
-      <Text style={[styles.text, textStyle]}>{message}</Text>
-    </View>
+      <Message style={textStyle}>{message}</Message>
+    </Container>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    alignItems: 'center',
-    justifyContent: 'center',
-    flex: 1,
-  },
-  text: {
-    fontFamily: theme.fonts.bold,
-    fontSize: theme.fonts.fontSizeBig,
-    color: theme.colors.black,
-    padding: theme.layout.padding.sm,
-  },
-  icon: {
-    alignSelf: 'center',
-    fontSize: 40,
-    color: theme.colors.black,
-  },
-});
 
 export default ScreenMessage;

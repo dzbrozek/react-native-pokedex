@@ -1,9 +1,10 @@
 import React from 'react';
-import { View, Text, StyleSheet, TouchableOpacity, ToastAndroid } from 'react-native';
+import { ToastAndroid } from 'react-native';
 import { ListItemProps } from '../../common/types';
 import { FontAwesome } from '@expo/vector-icons';
 import { theme } from '../../constants';
 import { Linking } from 'expo';
+import { Container, IconContainer, InfoContainer, LinkContainer, Subtitle, Title } from './styles';
 
 interface Props {
   item: ListItemProps;
@@ -26,58 +27,28 @@ class CreditItem extends React.Component<Props, {}> {
   render() {
     const { item: { title, subtitle, icon } } = this.props;
     return (
-      <TouchableOpacity style={styles.container} onPress={this.onPress}>
-        <View style={styles.iconContainer}>
+      <Container onPress={this.onPress}>
+        <IconContainer>
           <FontAwesome
             name={icon}
             size={26}
             color={theme.colors.red}
           />
-        </View>
-        <View style={styles.infoContainer} testID="item-text">
-          <Text style={styles.title}>{title}</Text>
-          <Text style={styles.subtitle}>{subtitle}</Text>
-        </View>
-        <View style={styles.linkContainer}>
+        </IconContainer>
+        <InfoContainer testID="info-container">
+          <Title>{title}</Title>
+          <Subtitle>{subtitle}</Subtitle>
+        </InfoContainer>
+        <LinkContainer>
           <FontAwesome
             name="arrow-right"
             size={26}
             color={theme.colors.red}
           />
-        </View>
-      </TouchableOpacity>
+        </LinkContainer>
+      </Container>
     );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    flexDirection: 'row',
-    padding: theme.layout.padding.sm,
-  },
-  iconContainer: {
-    width: 34,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  infoContainer: {
-    flexGrow: 1,
-    paddingHorizontal: 12,
-  },
-  linkContainer: {
-    width: 40,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  title: {
-    fontFamily: theme.fonts.bold,
-    fontSize: theme.fonts.fontSizeMedium,
-  },
-  subtitle: {
-    fontFamily: theme.fonts.thin,
-    fontSize: theme.fonts.fontSizeSmall,
-  },
-});
 
 export default CreditItem;

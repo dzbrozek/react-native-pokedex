@@ -1,8 +1,8 @@
 import { shallow } from 'enzyme';
 import React from 'react';
 import CreditItem from '../CreditItem';
-import { Text } from 'react-native';
 import { FontAwesome } from '@expo/vector-icons';
+import { Subtitle, Title } from '../styles';
 
 describe('<CreditItem/>', () => {
   it('should render component', () => {
@@ -16,9 +16,9 @@ describe('<CreditItem/>', () => {
 
     expect(wrapper.find(FontAwesome).at(0).prop('name')).toEqual(item.icon);
 
-    const itemText = wrapper.find({ testID: 'item-text' }).find(Text);
+    const itemText = wrapper.find({ testID: 'info-container' });
 
-    expect(itemText.at(0).prop('children')).toEqual(item.title);
-    expect(itemText.at(1).prop('children')).toEqual(item.subtitle);
+    expect(itemText.find(Title).prop('children')).toEqual(item.title);
+    expect(itemText.find(Subtitle).prop('children')).toEqual(item.subtitle);
   });
 });

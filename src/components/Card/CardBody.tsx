@@ -1,6 +1,6 @@
 import React from 'react';
-import { StyleProp, StyleSheet, View, ViewStyle } from 'react-native';
-import { theme } from '../../constants';
+import { StyleProp, ViewStyle } from 'react-native';
+import { CardBodyContainer } from './styles';
 
 interface Props {
   style?: StyleProp<ViewStyle>;
@@ -8,21 +8,10 @@ interface Props {
 
 const CardBody: React.FunctionComponent<Props> = ({ children, style }) => {
   return (
-    <View style={[styles.container, style]}>
+    <CardBodyContainer style={style}>
       {children}
-    </View>
+    </CardBodyContainer>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    padding: 8,
-    borderWidth: 1,
-    borderColor: theme.colors.lightGrey,
-    borderTopColor: 'transparent',
-    borderBottomLeftRadius: 6,
-    borderBottomRightRadius: 6,
-  },
-});
 
 export default CardBody;

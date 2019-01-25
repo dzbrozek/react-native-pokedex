@@ -1,12 +1,13 @@
 import React from 'react';
-import { View, FlatList, StyleSheet } from 'react-native';
+import { FlatList } from 'react-native';
 import PokemonItem from '../../components/PokemonItem';
-import { NavigationScreenProps, SafeAreaView } from 'react-navigation';
+import { NavigationScreenProps } from 'react-navigation';
 import { Query } from 'react-apollo';
 import { GET_POKEMONS } from './gql';
 import Loader from 'components/Loader';
 import ScreenMessage from '../../components/ScreenMessage';
 import { PokemonProps } from '../../types/pokemon';
+import { Container, FooterContainer } from './styles';
 
 const PAGE_SIZE = 15;
 
@@ -39,7 +40,7 @@ class Pokedex extends React.PureComponent<NavigationScreenProps, State> {
     const { numResults } = this.state;
 
     return (
-      <SafeAreaView style={styles.container}>
+      <Container>
         <Query
           query={GET_POKEMONS}
           variables={{ first: numResults }}
@@ -63,27 +64,17 @@ class Pokedex extends React.PureComponent<NavigationScreenProps, State> {
                 renderItem={({ item }) => <PokemonItem item={item}/>}
                 onEndReached={this.onEndReached}
                 ListFooterComponent={loading ? (
-                  <View style={styles.loaderContainer}>
+                  <FooterContainer>
                     <Loader/>
-                  </View>
+                  </FooterContainer>
                 ) : null}
               />
             );
           }}
         </Query>
-      </SafeAreaView>
+      </Container>
     );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-  loaderContainer: {
-    height: 90,
-    marginHorizontal: 200,
-  },
-});
 
 export default Pokedex;

@@ -1,5 +1,4 @@
 import React from 'react';
-import { StyleSheet, View } from 'react-native';
 import { AppLoading, Font } from 'expo';
 import AppNavigator from '../../navigation';
 import { theme } from '../../constants';
@@ -7,6 +6,8 @@ import { Provider as MobxProvider } from 'mobx-react/native';
 import stores from 'stores';
 import { ApolloProvider } from 'react-apollo';
 import client from 'config/api';
+import { ThemeProvider } from 'styled-components';
+import { Container } from './styles';
 
 export default class App extends React.Component {
   state = {
@@ -49,20 +50,15 @@ export default class App extends React.Component {
     }
 
     return (
-      <View style={styles.container}>
+      <ThemeProvider theme={theme}>
         <ApolloProvider client={client}>
           <MobxProvider {...stores}>
-            <AppNavigator />
+            <Container>
+              <AppNavigator />
+            </Container>
           </MobxProvider>
         </ApolloProvider>
-      </View>
+      </ThemeProvider>
     );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: theme.colors.white,
-  },
-});
