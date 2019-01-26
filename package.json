@@ -8,7 +8,8 @@
     "ios": "expo start --ios",
     "eject": "expo eject",
     "test": "jest",
-    "lint": "tslint src/**/*.{ts,tsx}"
+    "lint": "tslint src/**/*.{ts,tsx}",
+    "build": "expo build:android"
   },
   "dependencies": {
     "@expo/vector-icons": "^9.0.0",

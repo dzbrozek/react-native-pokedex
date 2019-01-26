@@ -2,6 +2,7 @@
   "expo": {
     "name": "React Native Pokedex",
     "slug": "react-native-pokedex",
+    "description": "Simple Pokedex app",
     "privacy": "public",
     "sdkVersion": "32.0.0",
     "platforms": [
@@ -12,7 +13,8 @@
       "package": "po.ke.dex"
     },
     "version": "1.0.0",
-    "orientation": "portrait",
+    "primaryColor": "#CC0000",
+    "orientation": "default",
     "icon": "./src/assets/images/icon.png",
     "splash": {
       "image": "./src/assets/images/splash.png",
