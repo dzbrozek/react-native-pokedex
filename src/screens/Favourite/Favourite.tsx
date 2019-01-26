@@ -5,7 +5,8 @@ import ScreenMessage from '../../components/ScreenMessage';
 import { inject, observer } from 'mobx-react/native';
 import { FavoriteStore } from '../../stores/Favorite';
 import { NavigationScreenProps } from 'react-navigation';
-import { Container, styles } from './styles';
+import { styles } from './styles';
+import { SafeContainer } from 'styles';
 
 interface Props extends NavigationScreenProps {
   favorite: FavoriteStore;
@@ -21,7 +22,7 @@ class Favourite extends React.Component<Props> {
   render() {
     const { favorite: { pokemons } } = this.props;
     return (
-      <Container>
+      <SafeContainer>
         <FlatList
           contentContainerStyle={styles.contentContainer}
           horizontal={false}
@@ -37,7 +38,7 @@ class Favourite extends React.Component<Props> {
           }}
           renderItem={({ item }) => <FavoriteItem item={item}/>}
         />
-      </Container>
+      </SafeContainer>
     );
   }
 }

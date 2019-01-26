@@ -31,6 +31,7 @@ const fonts = {
   fontSizeBig: 18,
   fontSizeMedium: 16,
   fontSizeSmall: 14,
+  fontSizeLarge: 22,
 };
 
 const shape = {

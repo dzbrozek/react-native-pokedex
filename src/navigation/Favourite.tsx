@@ -4,9 +4,11 @@ import React from 'react';
 import TabBarIcon from '../components/TabBarIcon';
 import { defaultNavigationOptions } from '../constants/navigation';
 import Favourite from '../screens/Favourite';
+import Pokemon from '../screens/Pokemon';
 
 const FavouriteStack = createStackNavigator({
   Favourite,
+  Pokemon,
 }, defaultNavigationOptions);
 
 FavouriteStack.navigationOptions = {

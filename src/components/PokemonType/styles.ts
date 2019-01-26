@@ -7,4 +7,6 @@ export const Container = styled.Text`
   font-family: ${props => props.theme.fonts.regular};
   font-size: ${props => props.theme.fonts.fontSizeSmall}px;
   color: ${props => props.theme.colors.white};
+  background-color: ${props => props.color};
+  ${props => props.style};
 `;

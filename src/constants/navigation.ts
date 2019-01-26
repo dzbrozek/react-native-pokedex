@@ -12,5 +12,6 @@ export const defaultNavigationOptions: StackNavigatorConfig = {
     headerStyle: {
       backgroundColor: theme.colors.red,
     },
+    headerTintColor: theme.colors.white,
   },
 };

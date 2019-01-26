@@ -9,7 +9,7 @@ interface Props {
 }
 
 const PokemonType: React.FunctionComponent<Props> = ({ type, style }) => {
-  return <Container key={type} style={[POKEMON_TYPE_STYLES[type], style]}>{type}</Container>;
+  return <Container key={type} color={POKEMON_TYPE_STYLES[type]} style={style}>{type}</Container>;
 };
 
 export default PokemonType;

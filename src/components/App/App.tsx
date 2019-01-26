@@ -8,6 +8,7 @@ import { ApolloProvider } from 'react-apollo';
 import client from 'config/api';
 import { ThemeProvider } from 'styled-components';
 import { Container } from './styles';
+import Loader from '../Loader';
 
 export default class App extends React.Component {
   state = {
@@ -54,7 +55,10 @@ export default class App extends React.Component {
         <ApolloProvider client={client}>
           <MobxProvider {...stores}>
             <Container>
-              <AppNavigator />
+              <AppNavigator
+                persistenceKey={__DEV__ ? 'NavigationStateDEV' : null}
+                renderLoadingExperimental={() => <Loader/>}
+              />
             </Container>
           </MobxProvider>
         </ApolloProvider>

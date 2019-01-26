@@ -7,7 +7,8 @@ import { GET_POKEMONS } from './gql';
 import Loader from 'components/Loader';
 import ScreenMessage from '../../components/ScreenMessage';
 import { PokemonProps } from '../../types/pokemon';
-import { Container, FooterContainer } from './styles';
+import { FooterContainer } from './styles';
+import { SafeContainer } from 'styles';
 
 const PAGE_SIZE = 15;
 
@@ -40,7 +41,7 @@ class Pokedex extends React.PureComponent<NavigationScreenProps, State> {
     const { numResults } = this.state;
 
     return (
-      <Container>
+      <SafeContainer>
         <Query
           query={GET_POKEMONS}
           variables={{ first: numResults }}
@@ -72,7 +73,7 @@ class Pokedex extends React.PureComponent<NavigationScreenProps, State> {
             );
           }}
         </Query>
-      </Container>
+      </SafeContainer>
     );
   }
 }

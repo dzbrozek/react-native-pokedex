@@ -9,7 +9,7 @@ export const Container = styled.View`
 `;
 
 export const Message = styled.Text`
-  font-family: ${props => props.theme.fonts.bold};
+  font-family: ${props => props.theme.fonts.thin};
   font-size: ${props => props.theme.fonts.fontSizeBig}px;
   color: ${props => props.theme.colors.blackGrey};
   padding: ${props => props.theme.layout.padding.sm}px;
