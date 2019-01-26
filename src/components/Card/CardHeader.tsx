@@ -24,7 +24,7 @@ const styles = StyleSheet.create({
     borderTopRightRadius: theme.shape.borderRadius,
   },
   text: {
-    fontSize: theme.fonts.fontSizeMedium,
+    fontSize: theme.fonts.md,
     color: theme.colors.white,
     fontFamily: theme.fonts.regular,
   },

@@ -1,4 +1,4 @@
-export const POKEMON_TYPE_STYLES = Object.freeze({
+export const POKEMON_COLORS = Object.freeze({
   Grass: '#509F15',
   Poison: '#7E1C70',
   Fire: '#CC0000',

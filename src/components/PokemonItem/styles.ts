@@ -29,7 +29,7 @@ export const Image = styled.Image`
 
 export const Name = styled.Text`
   font-family: ${props => props.theme.fonts.bold};
-  font-size: ${props => props.theme.fonts.fontSizeBig};
+  font-size: ${props => props.theme.fonts.lg};
   color: ${props => props.theme.colors.black};
 `;
 export const Types = styled.View`

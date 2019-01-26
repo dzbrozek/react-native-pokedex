@@ -3,7 +3,7 @@ import { ScrollView, FlatList } from 'react-native';
 import { AttackProps, PokemonAttacksProps } from '../../types/pokemon';
 import SectionHeader from '../../components/SectionHeader';
 import { AttacksContainer, StyledStatTile } from './styles';
-import { POKEMON_TYPE_STYLES } from '../../constants/colors';
+import { POKEMON_COLORS } from '../../constants/colors';
 
 interface Props {
   attacks: PokemonAttacksProps;
@@ -23,7 +23,7 @@ class Attacks extends React.Component<Props> {
             renderItem={({ item }) => <StyledStatTile
               title={item.name}
               value={item.damage}
-              color={POKEMON_TYPE_STYLES[item.type]}
+              color={POKEMON_COLORS[item.type]}
             />}
           />
         </AttacksContainer>

@@ -9,7 +9,7 @@ export const TypeContainer = styled.View`
 `;
 
 export const StyledPokemonType = styled(PokemonType)`
-  font-size: ${props => props.theme.fonts.fontSizeMedium};
+  font-size: ${props => props.theme.fonts.md};
   padding-left: ${props => props.theme.layout.padding.sm}px;
   padding-right: ${props => props.theme.layout.padding.sm}px;
   margin: ${props => props.theme.layout.padding.sm}px ${props => props.theme.layout.padding.sm}px
@@ -27,7 +27,7 @@ export const NameContainer = styled.View`
 `;
 
 export const Name = styled.Text`
-  font-size: ${props => props.theme.fonts.fontSizeLarge}px;
+  font-size: ${props => props.theme.fonts.xl}px;
   color: ${props => props.theme.colors.black};
   font-family: ${props => props.theme.fonts.bold};
   padding-right: ${props => props.theme.layout.padding.sm}px;

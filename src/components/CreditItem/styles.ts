@@ -26,10 +26,10 @@ export const LinkContainer = styled.View`
 
 export const Title = styled.Text`
   font-family: ${props => props.theme.fonts.bold};
-  font-size: ${props => props.theme.fonts.fontSizeMedium}px;
+  font-size: ${props => props.theme.fonts.md}px;
 `;
 
 export const Subtitle = styled.Text`
   font-family: ${props => props.theme.fonts.thin};
-  font-size: ${props => props.theme.fonts.fontSizeSmall}px;
+  font-size: ${props => props.theme.fonts.sm}px;
 `;

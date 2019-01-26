@@ -16,7 +16,7 @@ interface Props extends NavigationScreenProps {
 @observer
 class Favourite extends React.Component<Props> {
   static navigationOptions = {
-    title: 'Favorite',
+    title: 'Favourite',
   };
 
   render() {
@@ -31,7 +31,7 @@ class Favourite extends React.Component<Props> {
           ListEmptyComponent={() => {
             return (
               <ScreenMessage
-                iconProps={{ name: 'shopping-basket' }}
+                iconProps={{ name: 'heart-o' }}
                 message="You didn't like any pokemon yet"
               />
             );

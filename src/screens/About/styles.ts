@@ -13,7 +13,7 @@ export const CardBody = styled(Card.Body)`
 
 export const CardText = styled.Text`
   font-family: ${props => props.theme.fonts.regular};
-  font-size: ${props => props.theme.fonts.fontSizeMedium}px;
+  font-size: ${props => props.theme.fonts.md}px;
 `;
 
 export const ItemSeparator = styled.View`

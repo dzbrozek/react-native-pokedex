@@ -8,6 +8,6 @@ export const Container = styled.View`
 export const Title = styled.Text`
   color: ${props => props.theme.colors.white};
   font-family: ${props => props.theme.fonts.regular};
-  font-size: ${props => props.theme.fonts.fontSizeMedium}px;
+  font-size: ${props => props.theme.fonts.md}px;
   padding-left: ${props => props.theme.layout.padding.sm}px;
 `;

@@ -28,10 +28,10 @@ const fonts = {
   bold: 'Roboto-Bold',
   thin: 'Roboto-Thin',
 
-  fontSizeBig: 18,
-  fontSizeMedium: 16,
-  fontSizeSmall: 14,
-  fontSizeLarge: 22,
+  lg: 18,
+  md: 16,
+  sm: 14,
+  xl: 22,
 };
 
 const shape = {

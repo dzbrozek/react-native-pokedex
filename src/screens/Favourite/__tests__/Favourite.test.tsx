@@ -24,7 +24,7 @@ describe('<Favourite/>', () => {
     const component = shallow(<ListEmptyComponent/>);
 
     expect(component.props()).toEqual({
-      iconProps: { name: 'shopping-basket' },
+      iconProps: { name: 'heart-o' },
       message: 'You didn\'t like any pokemon yet',
     });
     expect(component.name()).toEqual('ScreenMessage');

@@ -9,13 +9,13 @@ export const Container = styled.View`
 `;
 
 export const Title = styled.Text`
-  font-size: ${props => props.theme.fonts.fontSizeSmall}px;
+  font-size: ${props => props.theme.fonts.sm}px;
   color: ${props => props.theme.colors.white};
   font-family: ${props => props.theme.fonts.regular};
 `;
 
 export const Value = styled.Text`
-  font-size: ${props => props.theme.fonts.fontSizeBig}px;
+  font-size: ${props => props.theme.fonts.lg}px;
   color: ${props => props.theme.colors.white};
   font-family: ${props => props.theme.fonts.regular};
 `;

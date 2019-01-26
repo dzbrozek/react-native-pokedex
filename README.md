@@ -14,5 +14,8 @@ npm start
 
 ## App
 
-![Pokedex](screenshots/pokedex.jpg)
-![Favorite](screenshots/favorite.jpg)
+![Pokedex](screenshots/1.png)
+![Details](screenshots/2.png)
+![Evolutions](screenshots/3.png)
+![Special attacks](screenshots/4.png)
+![Favorite](screenshots/5.png)
