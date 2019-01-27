@@ -1,4 +1,4 @@
-import styled from 'styled-components/native';
+import styled from 'config/styled-components';
 
 export const Container = styled.Text`
   padding: ${props => props.theme.layout.padding.xs}px;
@@ -8,5 +8,4 @@ export const Container = styled.Text`
   font-size: ${props => props.theme.fonts.sm}px;
   color: ${props => props.theme.colors.white};
   background-color: ${props => props.color};
-  ${props => props.style};
 `;

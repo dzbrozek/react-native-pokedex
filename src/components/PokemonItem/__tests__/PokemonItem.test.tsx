@@ -1,20 +1,22 @@
 import React from 'react';
-import { pokemonFactory } from '../../../tests/factories';
+import { PokemonFactory } from '../../../tests/factories';
 import { shallow } from 'enzyme';
 import PokemonItem from '../PokemonItem';
-import { FontAwesome } from '@expo/vector-icons';
 import { Image, Name } from '../styles';
 
-const pokemon = pokemonFactory.build();
-const removePokemonMock = jest.fn();
-const addPokemonMock = jest.fn();
+jest.mock('../styles');
+jest.mock('react-navigation', () => ({
+  withNavigation: jest.fn(component => component),
+}));
+const pokemon = PokemonFactory.build();
+const navigateMock = jest.fn();
+const navigation = {
+  navigate: navigateMock,
+};
 
 describe('<PokemonItem/>', () => {
   it('should render component', () => {
-    const favorite: any = {
-      pokemons: [pokemon.id],
-    };
-    const wrapper = shallow(<PokemonItem item={pokemon} favorite={favorite}/>).dive();
+    const wrapper = shallow(<PokemonItem item={pokemon}/>);
 
     expect(wrapper.find(Image).prop('source')).toEqual({
       uri: pokemon.image,
@@ -26,33 +28,13 @@ describe('<PokemonItem/>', () => {
     });
   });
 
-  it('should add pokemon to favorite', () => {
-    const favorite: any = {
-      pokemons: [],
-      addPokemon: addPokemonMock,
-    };
-    const wrapper = shallow(<PokemonItem item={pokemon} favorite={favorite}/>).dive();
+  it('should test press event', () => {
+    // @ts-ignore
+    const wrapper = shallow(<PokemonItem item={pokemon} navigation={navigation}/>);
 
-    expect(wrapper.find(FontAwesome).prop('name')).toEqual('heart-o');
+    wrapper.simulate('press');
 
-    wrapper.find({ testId: 'toggle-favorite' }).simulate('press');
-
-    expect(addPokemonMock).toHaveBeenCalledTimes(1);
-    expect(addPokemonMock).toHaveBeenCalledWith(pokemon.id);
-  });
-
-  it('should remove pokemon from favorite', () => {
-    const favorite: any = {
-      pokemons: [pokemon.id],
-      removePokemon: removePokemonMock,
-    };
-    const wrapper = shallow(<PokemonItem item={pokemon} favorite={favorite}/>).dive();
-
-    expect(wrapper.find(FontAwesome).prop('name')).toEqual('heart');
-
-    wrapper.find({ testId: 'toggle-favorite' }).simulate('press');
-
-    expect(removePokemonMock).toHaveBeenCalledTimes(1);
-    expect(removePokemonMock).toHaveBeenCalledWith(pokemon.id);
+    expect(navigateMock).toHaveBeenCalledTimes(1);
+    expect(navigateMock).toHaveBeenCalledWith('Pokemon', { id: pokemon.id, name: pokemon.name });
   });
 });

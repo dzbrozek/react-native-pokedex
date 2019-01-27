@@ -1,4 +1,4 @@
-import styled from 'styled-components/native';
+import styled from 'config/styled-components';
 import { Image } from 'react-native-animatable';
 
 export const Container = styled.View`

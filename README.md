@@ -1,6 +1,6 @@
 ## React Native Pokedex App
 
-Simple Pokedex app written using React Native.
+Simple Pokedex app written using React Native and based on [GraphQL Pokémon](https://github.com/lucasbento/graphql-pokemon).
 
 ## Getting Started
 

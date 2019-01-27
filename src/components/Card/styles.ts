@@ -1,4 +1,4 @@
-import styled from 'styled-components/native';
+import styled from 'config/styled-components';
 
 export const CardBodyContainer = styled.View`
   border-width: 1px;

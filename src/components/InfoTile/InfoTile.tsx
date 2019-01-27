@@ -7,7 +7,7 @@ interface Props {
   value: string;
   style?: StyleProp<ViewProps>;
 }
-const StatTile: React.FunctionComponent<Props> = ({ title, value, style }) => {
+const InfoTile: React.FunctionComponent<Props> = ({ title, value, style }) => {
   return (
     <Container style={style}>
       <Title numberOfLines={1}>{title}</Title>
@@ -16,4 +16,4 @@ const StatTile: React.FunctionComponent<Props> = ({ title, value, style }) => {
   );
 };
 
-export default StatTile;
+export default InfoTile;

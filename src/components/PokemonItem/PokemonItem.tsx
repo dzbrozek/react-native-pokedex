@@ -10,7 +10,7 @@ interface Props extends NavigationInjectedProps {
   item: PokemonProps;
 }
 
-class PokemonItem extends React.Component<Props> {
+class PokemonItem extends React.PureComponent<Props> {
   onPress = () => {
     const { item: { id, name }, navigation } = this.props;
 

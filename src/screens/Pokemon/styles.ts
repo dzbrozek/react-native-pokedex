@@ -1,6 +1,6 @@
-import styled from 'styled-components/native';
+import styled from 'config/styled-components';
 import PokemonType from '../../components/PokemonType';
-import StatTile from '../../components/StatTile';
+import InfoTile from '../../components/InfoTile';
 
 export const TypeContainer = styled.View`
   flex-direction: row;
@@ -50,7 +50,7 @@ export const StatsContainer = styled.View`
   align-items: center;
 `;
 
-export const StyledStatTile = styled(StatTile)`
+export const StyledInfoTile = styled(InfoTile)`
   width: 50%;
   background-color: ${props => props.color};
 `;

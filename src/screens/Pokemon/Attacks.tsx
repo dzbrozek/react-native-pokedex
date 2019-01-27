@@ -2,14 +2,14 @@ import React from 'react';
 import { ScrollView, FlatList } from 'react-native';
 import { AttackProps, PokemonAttacksProps } from '../../types/pokemon';
 import SectionHeader from '../../components/SectionHeader';
-import { AttacksContainer, StyledStatTile } from './styles';
+import { AttacksContainer, StyledInfoTile } from './styles';
 import { POKEMON_COLORS } from '../../constants/colors';
 
 interface Props {
   attacks: PokemonAttacksProps;
 }
 
-class Attacks extends React.Component<Props> {
+class Attacks extends React.PureComponent<Props> {
   renderAttacks = (header, attacks) => {
     return (
       <React.Fragment>
@@ -20,7 +20,7 @@ class Attacks extends React.Component<Props> {
             numColumns={2}
             data={attacks}
             keyExtractor={(attack: AttackProps) => attack.name}
-            renderItem={({ item }) => <StyledStatTile
+            renderItem={({ item }) => <StyledInfoTile
               title={item.name}
               value={item.damage}
               color={POKEMON_COLORS[item.type]}

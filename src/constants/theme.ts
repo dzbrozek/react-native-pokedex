@@ -1,4 +1,6 @@
-const layout = {
+import { ColorsInterface, ComponentsInterface, FontsInterface, LayoutInterface, ShapeInterface } from '../types/theme';
+
+const layout: LayoutInterface = {
   padding: {
     md: 16,
     sm: 8,
@@ -12,7 +14,7 @@ const layout = {
   },
 };
 
-const colors = {
+const colors: ColorsInterface = {
   red: '#CC0000',
   lightRed: '#E24242',
   black: '#222224',
@@ -23,7 +25,7 @@ const colors = {
   tabIconDefault: '#ccc',
 };
 
-const fonts = {
+const fonts: FontsInterface = {
   regular: 'Roboto-Regular',
   bold: 'Roboto-Bold',
   thin: 'Roboto-Thin',
@@ -34,11 +36,11 @@ const fonts = {
   xl: 22,
 };
 
-const shape = {
+const shape: ShapeInterface = {
   borderRadius: 5,
 };
 
-const components = {
+const components: ComponentsInterface = {
   tabBarIconSize: 22,
 };
 

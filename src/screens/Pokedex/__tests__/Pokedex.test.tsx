@@ -2,7 +2,7 @@ import { mount, shallow } from 'enzyme';
 import { MockedProvider } from 'react-apollo/test-utils';
 import { GET_POKEMONS } from '../gql';
 import React from 'react';
-import { pokemonFactory } from '../../../tests/factories';
+import { PokemonFactory } from '../../../tests/factories';
 import wait from 'waait';
 import Pokedex from '../Pokedex';
 import { FlatList } from 'react-native';
@@ -11,7 +11,7 @@ import ScreenMessage from '../../../components/ScreenMessage';
 jest.mock('../../../components/ScreenMessage/styles');
 
 const first = 15;
-const pokemons = pokemonFactory.buildList(3);
+const pokemons = PokemonFactory.buildList(3);
 const commonMock = {
   request: {
     query: GET_POKEMONS,
@@ -71,7 +71,7 @@ describe('<Pokedex/>', () => {
     });
   });
 
-  it('should render item', async () => {
+  it('should render list item', async () => {
     const wrapper = prepareWrapper([dataMock]);
 
     await wait(0);
@@ -84,6 +84,6 @@ describe('<Pokedex/>', () => {
     expect(component.props()).toEqual({
       item: pokemons[0],
     });
-    expect(component.name()).toEqual('inject-PokemonItem-with-favorite');
+    expect(component.name()).toEqual('withNavigation(PokemonItem)');
   });
 });

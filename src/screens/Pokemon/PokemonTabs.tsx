@@ -18,7 +18,7 @@ interface Props {
   pokemon: PokemonDetailsProps;
 }
 
-class PokemonTabs extends React.Component<Props, State> {
+class PokemonTabs extends React.PureComponent<Props, State> {
   state = {
     index: 0,
     routes: [],

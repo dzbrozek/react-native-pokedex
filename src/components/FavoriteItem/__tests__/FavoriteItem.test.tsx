@@ -3,7 +3,7 @@ import FavoriteItem from '../FavoriteItem';
 import { MockedProvider } from 'react-apollo/test-utils';
 import { GET_POKEMON } from '../gql';
 import React from 'react';
-import { pokemonFactory } from '../../../tests/factories';
+import { PokemonFactory } from '../../../tests/factories';
 import FavoriteItemLoader from '../../FavoriteItemLoader';
 import wait from 'waait';
 import PokemonItem from '../../PokemonItem';
@@ -11,6 +11,9 @@ import { Provider as MobxProvider } from 'mobx-react/native';
 
 jest.mock('../../FavoriteItemLoader/styles');
 jest.mock('../../PokemonItem/styles');
+jest.mock('react-navigation', () => ({
+  withNavigation: jest.fn(component => component),
+}));
 
 const item = '12345';
 const favorite: any = {
@@ -49,13 +52,13 @@ describe('<FavoriteItem/>', () => {
     };
     const wrapper = prepareWrapper([mock]);
 
-    await wait(2);
+    await wait(0);
 
     expect(wrapper.find(FavoriteItemLoader).exists()).toEqual(true);
   });
 
   it('should render component with data', async () => {
-    const pokemon = pokemonFactory.build();
+    const pokemon = PokemonFactory.build();
     const mock = {
       ...commonMock,
       result: {

@@ -1,4 +1,4 @@
-import styled from 'styled-components/native';
+import styled from 'config/styled-components';
 import Card from '../../components/Card';
 import { StyleSheet } from 'react-native';
 import { theme } from '../../constants';

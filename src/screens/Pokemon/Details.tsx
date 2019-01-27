@@ -8,7 +8,7 @@ import {
   Name, NameContainer,
   PokemonImage,
   StatsContainer,
-  StyledPokemonType, StyledStatTile,
+  StyledPokemonType, StyledInfoTile,
   TypeContainer,
 } from './styles';
 import FavoriteButton from '../../components/FavoriteButton';
@@ -17,7 +17,7 @@ interface Props {
   pokemon: PokemonDetailsProps;
 }
 
-class Details extends React.Component<Props> {
+class Details extends React.PureComponent<Props> {
   render() {
     const { pokemon } = this.props;
     const stats = [
@@ -66,7 +66,7 @@ class Details extends React.Component<Props> {
             numColumns={2}
             data={stats}
             keyExtractor={(_, index) => String(index)}
-            renderItem={({ item }) => <StyledStatTile
+            renderItem={({ item }) => <StyledInfoTile
               title={item.name}
               value={item.value}
               color={item.color}

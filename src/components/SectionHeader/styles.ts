@@ -1,4 +1,4 @@
-import styled from 'styled-components/native';
+import styled from 'config/styled-components';
 
 export const Container = styled.View`
   background-color: ${props => props.theme.colors.red};

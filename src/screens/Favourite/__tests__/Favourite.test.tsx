@@ -30,7 +30,7 @@ describe('<Favourite/>', () => {
     expect(component.name()).toEqual('ScreenMessage');
   });
 
-  it('should render item', () => {
+  it('should render list item', () => {
     const item = '13';
     const wrapper = shallow(<Favourite favorite={favorite} navigation={navigation}/>).dive();
     const RenderItem = wrapper.find(FlatList).prop('renderItem');

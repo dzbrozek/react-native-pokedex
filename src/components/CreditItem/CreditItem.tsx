@@ -10,7 +10,7 @@ interface Props {
   item: ListItemProps;
 }
 
-class CreditItem extends React.Component<Props, {}> {
+class CreditItem extends React.PureComponent<Props, {}> {
   onPress = () => {
     const { item: { link } } = this.props;
 

@@ -7,7 +7,7 @@ import { CREDITS } from '../../constants/creadits';
 import { NavigationScreenProps } from 'react-navigation';
 import { InfoCard, CardBody, ItemSeparator, CardText, styles } from './styles';
 
-class About extends React.Component<NavigationScreenProps> {
+class About extends React.PureComponent<NavigationScreenProps> {
   static navigationOptions = {
     title: 'About',
   };
